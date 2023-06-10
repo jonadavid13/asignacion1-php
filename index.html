@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/styles/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/styles/index.css">
+    <title>Empleados - PW</title>
+    <script src="assets/js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header py-2 px-3">
+        <h2>Empleados</h2>
+    </header>
+    <main>
+        <section class="main-info container py-4">
+            <div class="row justify-content-center">
+                <article class="tabla-container col-lg-8 d-flex flex-column justify-content-between">
+                    <table id="tablaRegistros" class="tabla-registros table table-striped table-hover">
+                        <thead class="table-header">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre y Apellido</th>
+                                <th scope="col">Edad</th>
+                                <th scope="col">Estado Civil</th>
+                                <th scope="col">Sexo</th>
+                                <th scope="col">Sueldo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Placeholder Lastname</td>
+                                <td>30</td>
+                                <td>Casado</td>
+                                <td>Masculino</td>
+                                <td>Entre 1000 y 2500 Bs.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <article id="infoCard" class="info-card d-flex flex-column">
+                        <h3 class="mb-3 fw-semibold title">Información</h3>
+                        <div>
+                            <span class="fw-semibold">Total de empleados del sexo femenino: </span><span id="span-empleados">0</span>
+                        </div>
+                        <div>
+                            <span class="fw-semibold">Total de hombres casados que ganan más de 2500 Bs: </span><span id="span-hombres">0</span>
+                        </div>
+                        <div>
+                            <span class="fw-semibold">Total de mujeres viudas que ganan más de 1000 Bs: </span><span id="span-viudas">0</span>
+                        </div>
+                        <div>
+                            <span class="fw-semibold">Edad promedio de los hombres: </span><span id="span-promedio-hombres">IND</span>
+                        </div>
+                    </article>
+                </article>
+
+                <article class="form-container col-lg-4 border rounded-1 py-2">
+                    <h3 class="form-title mb-4">Registrar empleado</h3>
+                    <form class="form-registros" id="RegistroForm">
+
+                        <div id="alertDiv"></div>
+
+                        <div class="mb-3">
+                            <label for="idNombre" class="form-label fw-semibold">Nombre y Apellido</label>
+                            <input type="text" class="form-control" id="idNombre" name="txtNombre"
+                                placeholder="Nombre Apellido" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="idEdad" class="form-label fw-semibold">Edad</label>
+                            <input type="number" class="form-control" id="idEdad" name="txtEdad"
+                                placeholder="Ingrese su edad" min="1" max="120" required>
+                        </div>
+                        <div class="d-flex">
+                            <div class="mb-3 d-flex flex-column me-5">
+                                <span class="mb-2 fw-semibold">Estado civil:</span>
+                                <div class="radio-container">
+                                    <input type="radio" name="estado-civ" id="soltero" value="ec-1">
+                                    <label for="soltero">Soltero(a)</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="estado-civ" id="casado" value="ec-2">
+                                    <label for="casado">Casado(a)</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="estado-civ" id="viudo" value="ec-3">
+                                    <label for="viudo">Viudo(a)</label>
+                                </div>
+                            </div>
+                            <div class="mb-3 d-flex flex-column ms-5">
+                                <span class="mb-2 fw-semibold">Sexo:</span>
+                                <div class="radio-container">
+                                    <input type="radio" name="sexo" id="femenino" value="Femenino">
+                                    <label for="femenino">Femenino</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="sexo" id="masculino" value="Masculino">
+                                    <label for="masculino">Masculino</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <span class="mb-2 fw-semibold">Sueldo:</span>
+                            <div class="mt-2 radio-container">
+                                <input type="radio" name="sueldo" id="sueldo1" value="sueldo-1">
+                                <label for="sueldo1">Menos de 1000 Bs.</label>
+                            </div>
+                            <div class="radio-container">
+                                <input type="radio" name="sueldo" id="sueldo2" value="sueldo-2">
+                                <label for="sueldo2">Entre 1000 y 2500 Bs.</label>
+                            </div>
+                            <div class="radio-container">
+                                <input type="radio" name="sueldo" id="sueldo3" value="sueldo-3">
+                                <label for="sueldo3">Más de 2500 Bs.</label>
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <button type="button" class="btn btn-primary" name="submit-btn" onclick="return verificarDatos()">Registrar</button>
+                            <button type="reset" class="btn btn-secondary">Limpiar</button>
+                        </div>
+                    </form>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
