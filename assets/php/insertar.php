@@ -81,6 +81,14 @@ if(isset($data['Nombre']) && isset($data['Edad']) && isset($data['EstadoCivil'])
     // Leer datos guardados en archivo local
     $archivo = fopen('data.txt', 'r');
 
+    // Variables para almacenar datos solicitados
+    $edadPromedioHombres = 0;
+    $sumEdadesHombres = 0;
+    $total_hombres = 0;
+    $total_mujeres = 0;
+    $hombres_casados_2500 = 0;
+    $viudas_1000 = 0;
+
     while (($line = fgets($archivo)) !== false) { // Leer cada línea en el archivo data.txt para extraer cada registro y agregarlo al array de registros
         $contenido = unserialize($line);
 
@@ -93,14 +101,42 @@ if(isset($data['Nombre']) && isset($data['Edad']) && isset($data['EstadoCivil'])
                 "sueldo" => $contenido['sueldo'],
             );
 
+            if($empleado["sexo"] == "Femenino"){
+                $total_mujeres += 1;
+
+                if($empleado["estadoCivil"] == "Viuda" && $empleado["sueldo"] != "Menos de 1000 Bs. "){
+                    $viudas_1000 += 1;
+                }
+            } else {
+                $total_hombres += 1;
+                $sumEdadesHombres += $empleado["edad"];
+
+                if($empleado["estadoCivil"] == "Casado" && $empleado["sueldo"] == "Más de 2500 Bs."){
+                    $hombres_casados_2500 += 1;
+                }
+            }
+
             array_push($registros, $empleado);
+            $numRegistros += 1;
         }
-        $numRegistros += 1;
+    }
+    if($total_hombres > 0){
+        $edadPromedioHombres = $sumEdadesHombres / $total_hombres;
+        $edadPromedioHombres = floor($edadPromedioHombres);
     }
 
+    // Información de respuesta
+    $info = array(
+        "totalMujeres" => $total_mujeres,
+        "hombresCasados2500" => $hombres_casados_2500,
+        "viudasMas1000" => $viudas_1000,
+        "edadesPromedioHombres" => $edadPromedioHombres,
+        "totalHombres" => $total_hombres
+    );
+    
     // Estableciendo mensajes de respuesta
-    $message = "Registrado: " . (string)$numRegistros;
-
+    $message = "Registro exitoso";
+    
     $json_array = array(
         "status" => "success",
         "message" => $message,
@@ -109,6 +145,7 @@ if(isset($data['Nombre']) && isset($data['Edad']) && isset($data['EstadoCivil'])
     
     array_push($results, $json_array);
     array_push($results, $registros);
+    array_push($results, $info);
 } else {
     $json_array = array(
         "status" => "error",

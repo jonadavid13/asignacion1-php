@@ -1,9 +1,0 @@
-a:5:{s:6:"nombre";s:8:"Jonathan";s:4:"edad";s:2:"23";s:11:"estadoCivil";s:7:"Soltero";s:4:"sexo";s:9:"Masculino";s:6:"sueldo";s:18:"Menos de 1000 Bs. ";}
-a:5:{s:6:"nombre";s:7:"Manuela";s:4:"edad";s:2:"25";s:11:"estadoCivil";s:6:"Casada";s:4:"sexo";s:8:"Femenino";s:6:"sueldo";s:21:"Entre 1000 y 2500 Bs.";}
-a:5:{s:6:"nombre";s:7:"Daniela";s:4:"edad";s:2:"30";s:11:"estadoCivil";s:7:"Soltera";s:4:"sexo";s:8:"Femenino";s:6:"sueldo";s:16:"Más de 2500 Bs.";}
-a:5:{s:6:"nombre";s:7:"Mariana";s:4:"edad";s:2:"23";s:11:"estadoCivil";s:7:"Soltera";s:4:"sexo";s:8:"Femenino";s:6:"sueldo";s:21:"Entre 1000 y 2500 Bs.";}
-a:5:{s:6:"nombre";s:8:"Jonathan";s:4:"edad";s:2:"23";s:11:"estadoCivil";s:7:"Soltero";s:4:"sexo";s:9:"Masculino";s:6:"sueldo";s:18:"Menos de 1000 Bs. ";}
-a:5:{s:6:"nombre";s:8:"Jonathan";s:4:"edad";s:2:"23";s:11:"estadoCivil";s:7:"Soltero";s:4:"sexo";s:9:"Masculino";s:6:"sueldo";s:18:"Menos de 1000 Bs. ";}
-a:5:{s:6:"nombre";s:8:"Jonathan";s:4:"edad";s:2:"23";s:11:"estadoCivil";s:7:"Soltero";s:4:"sexo";s:9:"Masculino";s:6:"sueldo";s:18:"Menos de 1000 Bs. ";}
-a:5:{s:6:"nombre";s:13:"Julio Pacheco";s:4:"edad";s:2:"24";s:11:"estadoCivil";s:7:"Soltero";s:4:"sexo";s:9:"Masculino";s:6:"sueldo";s:16:"Más de 2500 Bs.";}
-a:5:{s:6:"nombre";s:6:"Pamela";s:4:"edad";s:2:"28";s:11:"estadoCivil";s:6:"Casada";s:4:"sexo";s:8:"Femenino";s:6:"sueldo";s:16:"Más de 2500 Bs.";}

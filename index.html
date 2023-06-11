@@ -10,14 +10,16 @@
     <script src="assets/js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="resetDatos()">
     <header class="header py-2 px-3">
         <h2>Empleados</h2>
     </header>
     <main>
         <section class="main-info container py-4">
             <div class="row justify-content-center">
+                <div id="alertDiv"></div>
                 <article class="tabla-container col-lg-8 d-flex flex-column justify-content-between">
+
                     <table id="tablaRegistros" class="tabla-registros table table-striped table-hover">
                         <thead class="table-header">
                             <tr>
@@ -31,29 +33,29 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Placeholder Lastname</td>
-                                <td>30</td>
-                                <td>Casado</td>
-                                <td>Masculino</td>
-                                <td>Entre 1000 y 2500 Bs.</td>
+                                <th scope="row"></th>
+                                <td colspan="5">No hay registros</td>
                             </tr>
                         </tbody>
                     </table>
 
                     <article id="infoCard" class="info-card d-flex flex-column">
                         <h3 class="mb-3 fw-semibold title">Información</h3>
-                        <div>
-                            <span class="fw-semibold">Total de empleados del sexo femenino: </span><span id="span-empleados">0</span>
+                        <div class="d-flex">
+                            <span class="fw-semibold me-1">Total de empleados del sexo femenino: </span>
+                            <div id="span-mujeres">0</div>
                         </div>
-                        <div>
-                            <span class="fw-semibold">Total de hombres casados que ganan más de 2500 Bs: </span><span id="span-hombres">0</span>
+                        <div class="d-flex">
+                            <span class="fw-semibold me-1">Total de hombres casados que ganan más de 2500 Bs: </span>
+                            <div id="span-hombres">0</div>
                         </div>
-                        <div>
-                            <span class="fw-semibold">Total de mujeres viudas que ganan más de 1000 Bs: </span><span id="span-viudas">0</span>
+                        <div class="d-flex">
+                            <span class="fw-semibold me-1">Total de mujeres viudas que ganan más de 1000 Bs: </span>
+                            <div id="span-viudas">0</div>
                         </div>
-                        <div>
-                            <span class="fw-semibold">Edad promedio de los hombres: </span><span id="span-promedio-hombres">IND</span>
+                        <div class="d-flex">
+                            <span class="fw-semibold me-1">Edad promedio de los hombres: </span>
+                            <div id="span-promedio-hombres">0</div>
                         </div>
                     </article>
                 </article>
@@ -62,7 +64,7 @@
                     <h3 class="form-title mb-4">Registrar empleado</h3>
                     <form class="form-registros" id="RegistroForm">
 
-                        <div id="alertDiv"></div>
+                        <div id="alertForm"></div>
 
                         <div class="mb-3">
                             <label for="idNombre" class="form-label fw-semibold">Nombre y Apellido</label>
@@ -121,7 +123,7 @@
 
                         <div class="mb-3">
                             <button type="button" class="btn btn-primary" name="submit-btn" onclick="return verificarDatos()">Registrar</button>
-                            <button type="reset" class="btn btn-secondary">Limpiar</button>
+                            <button type="reset" class="btn btn-secondary" onclick='limpiarAlerta()'>Limpiar</button>
                         </div>
                     </form>
                 </article>
